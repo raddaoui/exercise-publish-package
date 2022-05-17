@@ -16,6 +16,8 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
+        pwd
+        cd sample-packages/docker/
         docker build . --file Dockerfile --tag ghcr.io/${{ github.actor }}/myapp:latest
         docker push ghcr.io/${{ github.actor }}/myapp:latest
         
